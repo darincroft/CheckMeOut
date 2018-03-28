@@ -6,6 +6,7 @@
 
 registerController::registerController(StoreInventory * inventory, order * checkout)
 {
+  cart->addObserver(this);
   database = inventory;
   cart = checkout;
 }
@@ -19,7 +20,7 @@ void registerController::processOrder()
   {
     std::cout<<"> ";
     std::cin>>command>>option;
-    
+
     if(command.compare("buy") == 0)
     {
       item add = database->lookup((int)option);
