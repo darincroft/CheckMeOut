@@ -14,7 +14,7 @@ public:
   registerController(StoreInventory *, order *);
   void processOrder();
   void update(){
-    processOrder();
+    screen.displayRunningTotal(*cart);
   }
 };
 
